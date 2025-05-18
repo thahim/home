@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Abdul Salam Thahim | Portfolio</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f9f9f9;
+      color: #333;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    .ticker {
+      background-color: #003366;
+      color: #fff;
+      padding: 10px 0;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .ticker p {
+      display: inline-block;
+      white-space: nowrap;
+      animation: ticker 20s linear infinite;
+      padding-left: 100%;
+    }
+
+    @keyframes ticker {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-100%); }
+    }
+
+    header {
+      text-align: center;
+      padding: 40px 20px;
+      background: linear-gradient(to right, #0066cc, #003366);
+      color: #fff;
+    }
+
+    header h1 {
+      font-size: 2.5em;
+      margin-bottom: 10px;
+    }
+
+    header .subtitle {
+      font-size: 1.2em;
+      opacity: 0.9;
+    }
+
+    .links {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 30px 20px;
+    }
+
+    .link-card {
+      background: #fff;
+      border: 1px solid #ddd;
+      border-left: 5px solid #003366;
+      padding: 15px 20px;
+      margin: 10px 0;
+      width: 90%;
+      max-width: 500px;
+      text-decoration: none;
+      color: #003366;
+      font-weight: bold;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .link-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    footer {
+      background: #003366;
+      color: #fff;
+      text-align: center;
+      padding: 20px 10px;
+    }
+
+    .footer-photo {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 10px;
+      border: 2px solid #fff;
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 2em;
+      }
+
+      .link-card {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="ticker" id="ticker">
+    <p>Loading updates...</p>
+  </div>
+
+  <header>
+    <h1>Abdul Salam Thahim</h1>
+    <p class="subtitle">Cyber Visionary & Web Creator</p>
+  </header>
+
+  <main>
+    <section class="links">
+      <a href="https://thahim.github.io/ast" class="link-card">Abdul Salam's Personal Website</a>
+      <a href="https://thahim.github.io/kbc" class="link-card">Who Wants to Be a Millionaire?</a>
+      <a href="https://thahim.github.io/photoshop" class="link-card">Photoshop</a>
+      <a href="https://thahim.github.io/editor" class="link-card">Photo Editor</a>
+      <a href="https://thahim.github.io/wrapit" class="link-card">Wrap.it</a>
+    </section>
+  </main>
+
+  <footer>
+    <img src="https://thahim.github.io/ast/images/IMG-20250516-WA0027.jpg" alt="Abdul Salam Thahim" class="footer-photo" />
+    <p>Developed by Abdul Salam Thahim</p>
+  </footer>
+
+  <script>
+    const newsHeadlines = [
+      "Karachi heatwave alert issued by Met Office",
+      "Pakistan launches new IT export policy",
+      "K-Electric load-shedding returns in parts of city",
+      "NADRA to digitize national IDs with AI",
+      "Karachi Weather: Sunny, 34°C"
+    ];
+
+    function updateTicker() {
+      const ticker = document.getElementById('ticker');
+      ticker.innerHTML = `<p>${newsHeadlines.join(' | ')}</p>`;
+    }
+
+    document.addEventListener('DOMContentLoaded', updateTicker);
+  </script>
+
+</body>
+</html>
