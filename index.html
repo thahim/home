@@ -1,171 +1,264 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saad Thahim - Professional Link Hub</title>
+    <!-- Basic SEO Meta Tags -->
+    <meta name="description" content="Official personal landing page and social links for Saad Thahim, an Aggriculturist, Owner & Partner at Sindh Cotton Ginning & Oil Mills, and Assistant Director (BPD-17) Government of Sindh. Connect via Facebook, Instagram, TikTok, or email (thahims@yahoo.com).">
+    
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Load Inter Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Apply Inter font globally and set dark background */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0f172a; /* Tailwind Slate 900 - Deep background */
+            /* Subtle radial gradients for background texture */
+            background-image: radial-gradient(at 0% 0%, #1e3a8a 0%, transparent 50%), radial-gradient(at 100% 100%, #171717 0%, transparent 50%);
+            background-blend-mode: soft-light;
+        }
 
-  <!-- Link Preview (Open Graph) -->
-  <meta property="og:title" content="Abdul Salam Thahim" />
-  <meta property="og:description" content="Wadero" />
-  <meta property="og:image" content="https://thahim.github.io/ast/images/IMG-20250516-WA0027.jpg" />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://thahim.github.io/ast" />
+        /* Keyframe for the slide-up/fade-in entry animation */
+        @keyframes fadeInSlideUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Custom styling for the main card and buttons */
+        .animated-section {
+            opacity: 0;
+            animation-name: fadeInSlideUp;
+            animation-duration: 0.8s;
+            animation-fill-mode: forwards;
+        }
 
-  <!-- Optional for Twitter -->
-  <meta name="twitter:card" content="https://github.com/thahim/home/blob/main/largephoto.jpg" />
-  <meta name="twitter:title" content="Abdul Salam Thahim" />
-  <meta name="twitter:description" content="Wadero" />
-  <meta name="twitter:image" content="https://thahim.github.io/ast/images/IMG-20250516-WA0027.jpg" />
+        .link-button {
+            transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+            /* Reduced shadow for a flatter, more professional look */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            cursor: pointer;
+            border: 1px solid rgba(156, 163, 175, 0.1); /* Subtle gray border */
+        }
+        .link-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+        }
+        .link-button:active {
+            transform: translateY(0);
+        }
+        
+        /* Set individual animation delays for a staggered effect */
+        .profile-section { animation-delay: 0.1s; }
+        .link-title { animation-delay: 0.3s; }
+        .link-1 { animation-delay: 0.4s; }
+        .link-2 { animation-delay: 0.5s; }
+        .link-3 { animation-delay: 0.6s; }
+        .link-4 { animation-delay: 0.7s; }
+        .footer-section { animation-delay: 0.8s; }
 
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Abdul Salam Thahim | Portfolio</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+        /* Instagram Branding Gradient (Radial) */
+        .instagram-gradient {
+            background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+        }
 
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: #f9f9f9;
-      color: #333;
-      line-height: 1.6;
-      overflow-x: hidden;
-    }
-
-    .ticker {
-      background-color: #003366;
-      color: #fff;
-      padding: 10px 0;
-      overflow: hidden;
-      position: relative;
-    }
-
-    .ticker p {
-      display: inline-block;
-      white-space: nowrap;
-      animation: ticker 20s linear infinite;
-      padding-left: 100%;
-    }
-
-    @keyframes ticker {
-      0% { transform: translateX(0); }
-      100% { transform: translateX(-100%); }
-    }
-
-    header {
-      text-align: center;
-      padding: 40px 20px;
-      background: linear-gradient(to right, #0066cc, #003366);
-      color: #fff;
-    }
-
-    header h1 {
-      font-size: 2.5em;
-      margin-bottom: 10px;
-    }
-
-    header .subtitle {
-      font-size: 1.2em;
-      opacity: 0.9;
-    }
-
-    .links {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 30px 20px;
-    }
-
-    .link-card {
-      background: #fff;
-      border: 1px solid #ddd;
-      border-left: 5px solid #003366;
-      padding: 15px 20px;
-      margin: 10px 0;
-      width: 90%;
-      max-width: 500px;
-      text-decoration: none;
-      color: #003366;
-      font-weight: bold;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .link-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    }
-
-    footer {
-      background: #003366;
-      color: #fff;
-      text-align: center;
-      padding: 20px 10px;
-    }
-
-    .footer-photo {
-      width: 80px;
-      height: 80px;
-      border-radius: 50%;
-      object-fit: cover;
-      margin-bottom: 10px;
-      border: 2px solid #fff;
-    }
-
-    @media (max-width: 600px) {
-      header h1 {
-        font-size: 2em;
-      }
-
-      .link-card {
-        width: 100%;
-      }
-    }
-  </style>
+        /* Custom TikTok Icon Styling for the Glitch Effect (CSS for layers/offsets only) */
+        .tiktok-icon-container {
+            position: relative;
+            width: 1.75rem; /* w-7 */
+            height: 1.75rem; /* h-7 */
+            flex-shrink: 0;
+        }
+        .tiktok-icon-base {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.1s;
+        }
+        /* Offset layers for the glitch effect */
+        .tiktok-icon-cyan {
+            fill: #25F4EE; /* Cyan */
+            transform: translate(1.5px, 0.5px); 
+            opacity: 0.9;
+        }
+        .tiktok-icon-magenta {
+            fill: #FE2C55; /* Magenta */
+            transform: translate(-1.5px, -0.5px); 
+            opacity: 0.9;
+        }
+        .tiktok-icon-white {
+            fill: white;
+        }
+    </style>
 </head>
-<body>
+<body class="flex items-center justify-center min-h-screen p-4">
 
-  <div class="ticker" id="ticker">
-    <p>Loading updates...</p>
-  </div>
+    <!-- Main Card Container -->
+    <main class="w-full max-w-lg bg-gray-800 text-white shadow-3xl rounded-3xl p-6 sm:p-10 space-y-8 border border-gray-700">
 
-  <header>
-    <h1>Abdul Salam Thahim</h1>
-    <p class="subtitle">Cyber Visionary & Web Creator</p>
-  </header>
+        <!-- Profile Section (Animated) -->
+        <section class="text-center space-y-4 animated-section profile-section">
+            <!-- Profile Photo: Using the raw GitHub link and an onerror fallback -->
+            <img class="w-32 h-32 mx-auto rounded-full object-cover border-4 border-sky-500 shadow-2xl"
+                 src="https://raw.githubusercontent.com/thahim/home/main/pic.jpg"
+                 alt="Profile Photo of Saad Thahim"
+                 onerror="this.onerror=null; this.src='https://placehold.co/128x128/1e293b/ffffff?text=S+T';">
 
-  <main>
-    <section class="links">
-      <a href="https://thahim.github.io/ast" class="link-card">Abdul Salam's Personal Website</a>
-      <a href="https://thahim.github.io/kbc" class="link-card">Who Wants to Be a Millionaire?</a>
-      <a href="https://thahim.github.io/photoshop" class="link-card">Photoshop</a>
-      <a href="https://thahim.github.io/editor" class="link-card">Photo Editor</a>
-      <a href="https://thahim.github.io/wrapit" class="link-card">Wrap.it</a>
-      <a href="https://thahim.github.io/tribe" class="link-card">Legacy of Thahim Tribe</a>
-    </section>
-  </main>
+            <h1 class="text-3xl font-extrabold text-white">Saad Thahim</h1>
+            <p class="text-lg text-sky-400 font-bold tracking-widest uppercase">
+                Aggriculturist | Owner & Partner, Sindh Cotton Ginning & Oil Mills
+            </p>
+            <p class="text-sm text-gray-400 font-semibold mt-1">
+                Assistant Director (BPD-17), Government of Sindh
+            </p>
+        </section>
 
-  <footer>
-    <img src="https://thahim.github.io/ast/images/IMG-20250516-WA0027.jpg" alt="Abdul Salam Thahim" class="footer-photo" />
-    <p>Developed by Abdul Salam Thahim</p>
-  </footer>
+        <!-- Social Links Section -->
+        <section class="space-y-4 pt-4">
+            <h2 class="text-xl font-bold text-gray-300 border-b border-gray-700 pb-3 animated-section link-title" style="animation-delay: 0.3s;">Connect & Follow</h2>
 
-  <script>
-    const newsHeadlines = [
-      "Karachi heatwave alert issued by Met Office",
-      "Pakistan launches new IT export policy",
-      "K-Electric load-shedding returns in parts of city",
-      "NADRA to digitize national IDs with AI",
-      "Karachi Weather: Sunny, 34°C"
-    ];
+            <!-- Link Buttons (Staggered Animation) -->
 
-    function updateTicker() {
-      const ticker = document.getElementById('ticker');
-      ticker.innerHTML = `<p>${newsHeadlines.join(' | ')}</p>`;
-    }
+            <!-- Facebook Link -->
+            <a href="https://facebook.com/saad.thahim" target="_blank" 
+               class="link-button w-full flex items-center justify-between p-4 bg-blue-700 text-white font-semibold rounded-xl hover:bg-blue-600 animated-section link-1" style="animation-delay: 0.4s;">
+                <span class="flex items-center space-x-3">
+                    <!-- Facebook Icon SVG (w-7 h-7) -->
+                    <svg class="w-7 h-7 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h3.084l-.499 3.001h-2.585v6.987A10.022 10.022 0 0022 12z"></path></svg>
+                    <span>Facebook / saad.thahim</span>
+                </span>
+                <span class="text-sm opacity-90">Visit</span>
+            </a>
 
-    document.addEventListener('DOMContentLoaded', updateTicker);
-  </script>
+            <!-- Instagram Link -->
+            <a href="https://instagram.com/thahim1" target="_blank" 
+               class="link-button w-full flex items-center justify-between p-4 text-white font-semibold rounded-xl instagram-gradient animated-section link-2" style="animation-delay: 0.5s;">
+                <span class="flex items-center space-x-3">
+                    <!-- Instagram Icon SVG (w-7 h-7) -->
+                    <svg class="w-7 h-7 flex-shrink-0" fill="white" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.015 4.85.071 4.225.154 6.136 2.059 6.28 6.28.058 1.271.071 1.652.071 4.85s-.014 3.584-.071 4.85c-.154 4.225-2.059 6.136-6.28 6.28-.058.016-1.26.071-4.85.071s-3.584-.015-4.85-.071c-4.225-.154-6.136-2.059-6.28-6.28-.058-1.271-.071-1.652-.071-4.85s.014-3.584.071-4.85c.154-4.225 2.059-6.136 6.28-6.28C8.42 2.168 8.79 2.155 12 2.163zm0 3.722c-3.14 0-5.715 2.574-5.715 5.715s2.575 5.715 5.715 5.715 5.715-2.574 5.715-5.715-2.575-5.715-5.715-5.715zM12 17.164c-2.84 0-5.145-2.305-5.145-5.145s2.305-5.145 5.145-5.145 5.145 2.305 5.145 5.145-2.305 5.145-5.145 5.145zm6.406-9.617c-.89 0-1.609-.72-1.609-1.609s.719-1.609 1.609-1.609 1.609.72 1.609 1.609-.719 1.609-1.609 1.609z"/></svg>
+                    <span>Instagram / thahim1</span>
+                </span>
+                <span class="text-sm opacity-90">Follow</span>
+            </a>
 
+            <!-- TikTok Link -->
+            <a href="https://tiktok.com/@thahim1" target="_blank" 
+               class="link-button w-full flex items-center justify-between p-4 bg-black text-white font-semibold rounded-xl hover:bg-gray-700 animated-section link-3" style="animation-delay: 0.6s;">
+                <span class="flex items-center space-x-3">
+                    <!-- TikTok Icon Container (w-7 h-7) -->
+                    <div class="tiktok-icon-container">
+                        <!-- Magenta Layer (Offset -1.5px, -0.5px) -->
+                        <svg class="tiktok-icon-base tiktok-icon-magenta" viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M19.63 7.63a4.9 4.9 0 00-.77-1.46c-.65-.77-1.69-1.33-3.08-1.57v3.08c.9.22 1.71.57 2.38 1.08a2.5 2.5 0 011.48 2.05v.25c0 .28-.23.51-.51.51h-3.47a.51.51 0 01-.51-.51v-5.07c0-.28-.23-.51-.51-.51h-1.69c-.28 0-.51.23-.51.51v10.51c0 .28.23.51.51.51h1.69c.28 0 .51-.23.51-.51v-5.07h2.84c.86 0 1.56.7 1.56 1.56v.25c0 .99-.81 1.79-1.79 1.79h-4.22c-2.48 0-4.5-2.01-4.5-4.5s2.02-4.5 4.5-4.5h1.78c.28 0 .51-.23.51-.51V6.37c0-.28-.23-.51-.51-.51H9.92C6.54 5.85 4.5 8.14 4.5 12c0 3.86 2.04 6.15 5.42 6.15h3.2c.28 0 .51-.23.51-.51v-4.53c0-.28.23-.51.51-.51h3.47c.28 0 .51.23.51.51v1.28a4.93 4.93 0 00.77 1.46z"></path>
+                        </svg>
+                        <!-- Cyan Layer (Offset 1.5px, 0.5px) -->
+                        <svg class="tiktok-icon-base tiktok-icon-cyan" viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M19.63 7.63a4.9 4.9 0 00-.77-1.46c-.65-.77-1.69-1.33-3.08-1.57v3.08c.9.22 1.71.57 2.38 1.08a2.5 2.5 0 011.48 2.05v.25c0 .28-.23.51-.51.51h-3.47a.51.51 0 01-.51-.51v-5.07c0-.28-.23-.51-.51-.51h-1.69c-.28 0-.51.23-.51.51v10.51c0 .28.23.51.51.51h1.69c.28 0 .51-.23.51-.51v-5.07h2.84c.86 0 1.56.7 1.56 1.56v.25c0 .99-.81 1.79-1.79 1.79h-4.22c-2.48 0-4.5-2.01-4.5-4.5s2.02-4.5 4.5-4.5h1.78c.28 0 .51-.23.51-.51V6.37c0-.28-.23-.51-.51-.51H9.92C6.54 5.85 4.5 8.14 4.5 12c0 3.86 2.04 6.15 5.42 6.15h3.2c.28 0 .51-.23.51-.51v-4.53c0-.28.23-.51.51-.51h3.47c.28 0 .51.23.51.51v1.28a4.93 4.93 0 00.77 1.46z"></path>
+                        </svg>
+                        <!-- White Main Layer (No offset) -->
+                        <svg class="tiktok-icon-base tiktok-icon-white" viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M19.63 7.63a4.9 4.9 0 00-.77-1.46c-.65-.77-1.69-1.33-3.08-1.57v3.08c.9.22 1.71.57 2.38 1.08a2.5 2.5 0 011.48 2.05v.25c0 .28-.23.51-.51.51h-3.47a.51.51 0 01-.51-.51v-5.07c0-.28-.23-.51-.51-.51h-1.69c-.28 0-.51.23-.51.51v10.51c0 .28.23.51.51.51h1.69c.28 0 .51-.23.51-.51v-5.07h2.84c.86 0 1.56.7 1.56 1.56v.25c0 .99-.81 1.79-1.79 1.79h-4.22c-2.48 0-4.5-2.01-4.5-4.5s2.02-4.5 4.5-4.5h1.78c.28 0 .51-.23.51-.51V6.37c0-.28-.23-.51-.51-.51H9.92C6.54 5.85 4.5 8.14 4.5 12c0 3.86 2.04 6.15 5.42 6.15h3.2c.28 0 .51-.23.51-.51v-4.53c0-.28.23-.51.51-.51h3.47c.28 0 .51.23.51.51v1.28a4.93 4.93 0 00.77 1.46z"></path>
+                        </svg>
+                    </div>
+                    <span>TikTok / thahim1</span>
+                </span>
+                <span class="text-sm opacity-90">Watch</span>
+            </a>
+
+            <!-- Email (Click to Copy) Button -->
+            <button id="email-button" data-email="thahims@yahoo.com" 
+                    class="link-button w-full flex items-center justify-between p-4 bg-indigo-600 text-white font-semibold rounded-xl hover:bg-indigo-500 relative overflow-hidden animated-section link-4" style="animation-delay: 0.7s;">
+                <span class="flex items-center space-x-3 z-10">
+                    <!-- Email Icon SVG (w-7 h-7) -->
+                    <svg class="w-7 h-7 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8m-2 4v7a2 2 0 01-2 2H7a2 2 0 01-2-2v-7"></path></svg>
+                    <span id="email-text">Email / thahims@yahoo.com</span>
+                </span>
+                <span id="copy-status" class="text-sm opacity-90 z-10 transition-opacity duration-300">Copy</span>
+                
+                <!-- Success Message Overlay for Copying -->
+                <div id="success-message" class="absolute inset-0 flex items-center justify-center bg-green-500 bg-opacity-95 text-white font-extrabold text-xl rounded-xl transition-all duration-300 transform translate-y-full opacity-0">
+                    <span class="flex items-center space-x-2">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                        <span>Copied!</span>
+                    </span>
+                </div>
+            </button>
+        </section>
+
+        <footer class="text-center pt-4 text-sm text-gray-500 animated-section footer-section" style="animation-delay: 0.8s;">
+            <!-- Adjusted footer animation delay -->
+            © 2025 Saad Thahim
+        </footer>
+
+    </main>
+
+    <script>
+        // Function to copy text to clipboard using the iframe-safe method
+        function copyToClipboard(text) {
+            const textarea = document.createElement('textarea');
+            textarea.value = text;
+            textarea.style.position = 'fixed'; 
+            textarea.style.opacity = 0;
+            document.body.appendChild(textarea);
+            textarea.focus();
+            textarea.select();
+
+            try {
+                // Execute copy command
+                const successful = document.execCommand('copy');
+                return successful;
+            } catch (err) {
+                console.error('Copy command failed:', err);
+                return false;
+            } finally {
+                document.body.removeChild(textarea);
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const emailButton = document.getElementById('email-button');
+            const copyStatus = document.getElementById('copy-status');
+            const successMessage = document.getElementById('success-message');
+            const email = emailButton.getAttribute('data-email');
+
+            emailButton.addEventListener('click', () => {
+                const isCopied = copyToClipboard(email);
+
+                if (isCopied) {
+                    // Hide "Copy" text
+                    copyStatus.style.opacity = '0';
+                    
+                    // Show success message overlay
+                    successMessage.classList.remove('translate-y-full', 'opacity-0');
+                    successMessage.classList.add('translate-y-0', 'opacity-100');
+
+                    // Hide success message and restore "Copy" text after 1.5 seconds
+                    setTimeout(() => {
+                        successMessage.classList.remove('translate-y-0', 'opacity-100');
+                        successMessage.classList.add('translate-y-full', 'opacity-0');
+                        
+                        // Restore "Copy" text after the success message fully fades out
+                        setTimeout(() => {
+                            copyStatus.style.opacity = '0.9';
+                        }, 300); // Matches transition duration
+                        
+                    }, 1500);
+                }
+            });
+        });
+    </script>
 </body>
 </html>
+
