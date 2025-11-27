@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Saad Thahim - Professional Link Hub</title>
-    <!-- Basic SEO Meta Tags -->
-    <meta name="description" content="Official personal landing page and social links for Saad Thahim, an Aggriculturist, Owner & Partner at Sindh Cotton Ginning & Oil Mills, and Assistant Director (BPD-17) Government of Sindh. Connect via Facebook, Instagram, TikTok, or email (thahims@yahoo.com).">
+    <!-- Basic SEO Meta Tags (For you, I recommend reviewing this SEO text!) -->
+    <meta name="description" content="Official personal landing page and social links for Saad Thahim, an Aggriculturist, Owner & Partner at Sindh Cotton Ginning & Oil Mills, and Assistant Director (BPS-17) Government of Sindh. Connect via Facebook, Instagram, TikTok, or email (thahims@yahoo.com).">
     
     <!-- Load Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -103,25 +103,28 @@
         }
     </style>
 </head>
-<body class="flex items-center justify-center min-h-screen p-4">
+<body class="flex items-center justify-center min-h-screen p-4 lg:p-10">
 
-    <!-- Main Card Container -->
-    <main class="w-full max-w-lg bg-gray-800 text-white shadow-3xl rounded-3xl p-6 sm:p-10 space-y-8 border border-gray-700">
+    <!-- Main Card Container: Responsive sizing implemented -->
+    <main class="w-full max-w-md lg:max-w-lg bg-gray-800 text-white shadow-3xl rounded-3xl p-6 sm:p-10 space-y-8 border border-gray-700">
 
         <!-- Profile Section (Animated) -->
         <section class="text-center space-y-4 animated-section profile-section">
-            <!-- Profile Photo: Using the raw GitHub link and an onerror fallback -->
-            <img class="w-32 h-32 mx-auto rounded-full object-cover border-4 border-sky-500 shadow-2xl"
+            <!-- Profile Photo: Scales up slightly on larger screens -->
+            <img class="w-32 h-32 sm:w-36 sm:h-36 mx-auto rounded-full object-cover border-4 border-sky-500 shadow-2xl"
                  src="https://raw.githubusercontent.com/thahim/home/main/pic.jpg"
                  alt="Profile Photo of Saad Thahim"
-                 onerror="this.onerror=null; this.src='https://placehold.co/128x128/1e293b/ffffff?text=S+T';">
+                 onerror="this.onerror=null; this.src='https://placehold.co/144x144/1e293b/ffffff?text=S+T';">
 
-            <h1 class="text-3xl font-extrabold text-white">Saad Thahim</h1>
+            <!-- Main Name: Scales up on larger screens -->
+            <h1 class="text-3xl sm:text-4xl font-extrabold text-white">Saad Thahim</h1>
+            
+            <!-- Professional Titles -->
             <p class="text-lg text-sky-400 font-bold tracking-widest uppercase">
                 Aggriculturist | Owner & Partner, Sindh Cotton Ginning & Oil Mills
             </p>
             <p class="text-sm text-gray-400 font-semibold mt-1">
-                Assistant Director (BPD-17), Government of Sindh
+                Assistant Director (BPS-17), Government of Sindh
             </p>
         </section>
 
@@ -129,7 +132,7 @@
         <section class="space-y-4 pt-4">
             <h2 class="text-xl font-bold text-gray-300 border-b border-gray-700 pb-3 animated-section link-title" style="animation-delay: 0.3s;">Connect & Follow</h2>
 
-            <!-- Link Buttons (Staggered Animation) -->
+            <!-- Link Buttons (All buttons are w-full for full mobile support) -->
 
             <!-- Facebook Link -->
             <a href="https://facebook.com/saad.thahim" target="_blank" 
@@ -198,7 +201,6 @@
         </section>
 
         <footer class="text-center pt-4 text-sm text-gray-500 animated-section footer-section" style="animation-delay: 0.8s;">
-            <!-- Adjusted footer animation delay -->
             © 2025 Saad Thahim
         </footer>
 
